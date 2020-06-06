@@ -9,7 +9,6 @@ class TunnelPoll extends React.Component {
 	}
 	
 
-
 	componentDidMount = () => {
 		fetch('https://it101.infotripla.fi/city_app_traffic_data_rest_api/city_specific/tampere/tunneli/tunneli_status_and_area_notifications.php')
 		.then((response) => {
