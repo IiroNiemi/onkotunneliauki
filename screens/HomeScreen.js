@@ -11,7 +11,7 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
 
-			<DevelopmentModeNotice />
+			 <DevelopmentModeNotice />
 				<View style={styles.welcomeContainer}>
 					<TunnelPoll />
         </View>
@@ -38,13 +38,13 @@ function DevelopmentModeNotice() {
 
     return (
       <Text style={styles.developmentModeText}>
-        Tarkista onko Tampereen rantatunneli auki?
+				Development mode is enabled: your app will be slower but you can use useful development tools {learnMoreButton}
       </Text>
     );
   } else {
     return (
       <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
+                Tarkista onko Tampereen rantatunneli auki?
       </Text>
     );
   }
