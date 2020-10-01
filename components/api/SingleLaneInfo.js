@@ -4,7 +4,10 @@ import { Text, ActivityIndicator, StyleSheet, Image, View  } from 'react-native'
 const SingleLaneInfo = () => {
 
 
-	return 
+
+	return(
+	null
+	)
 }
 
 export default SingleLaneInfo
