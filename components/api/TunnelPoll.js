@@ -43,7 +43,7 @@ const TunnelPoll = () => {
 			) : (
 			<>	
 			{state ?  
-					<ResolveTunnelStatus tunnelState={state} /> : <Text>Yhteysonglema</Text>}
+					<ResolveTunnelStatus tunnelState={state} /> : <Text>Yhteysonglema 😢</Text>}
 			</>
 			)}
 		</View>

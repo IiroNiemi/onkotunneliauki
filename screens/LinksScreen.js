@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'; 
 import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -8,21 +8,26 @@ export default function LinksScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <OptionButton
-        icon="md-school"
-        label="Read the Expo documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://docs.expo.io')}
+        icon="car"
+        label="Tampereen liikennekartta"
+        onPress={() => WebBrowser.openBrowserAsync('https://www.tampereenliikenne.fi/#/map/driving')}
       />
 
       <OptionButton
-        icon="md-compass"
-        label="Read the React Navigation documentation"
-        onPress={() => WebBrowser.openBrowserAsync('https://reactnavigation.org')}
+        icon="linkedin-square"
+        label="Kehittäjä"
+        onPress={() => WebBrowser.openBrowserAsync('https://www.linkedin.com/in/iiniemi/')}
       />
 
+			<OptionButton
+        icon="github"
+        label="Git"
+        onPress={() => WebBrowser.openBrowserAsync('https://github.com/IiroNiemi')}
+      />
       <OptionButton
-        icon="ios-chatboxes"
-        label="Ask a question on the forums"
-        onPress={() => WebBrowser.openBrowserAsync('https://forums.expo.io')}
+        icon="infocirlce"
+        label="Rajapinta: Infotripla"
+        onPress={() => WebBrowser.openBrowserAsync('http://www.infotripla.fi/')}
         isLastOption
       />
     </ScrollView>
@@ -34,7 +39,7 @@ function OptionButton({ icon, label, onPress, isLastOption }) {
     <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
       <View style={{ flexDirection: 'row' }}>
         <View style={styles.optionIconContainer}>
-          <Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
+          <AntDesign name={icon} size={22} color="rgba(0,0,0,0.35)" />
         </View>
         <View style={styles.optionTextContainer}>
           <Text style={styles.optionText}>{label}</Text>

@@ -25,63 +25,57 @@ const ResolveTunnelStatus = (tunnelState) => {
 	
 	switch(EastStatus){
 		case EastStatus = LANE_OPEN:
-			EastResolved = <Image source={require('../../assets/images/tunnel_open.png')} style={styles.tunnelStyle} />
+			EastResolved = <Image source={require('../../assets/images/tunnel_open.png')} style={styles.tunnelImage	} />
 			break;
 
 		case EastStatus = LANE_CLOSED:
-			EastResolved = <Image source={require('../../assets/images/tunnel_lane_closed.png')} style={styles.tunnelStyle} />
+			EastResolved = <Image source={require('../../assets/images/tunnel_lane_closed.png')} style={styles.tunnelImage	} />
 			break;
 
 		case EastStatus = UNKNOWN_TUNNEL_STATE:
-			EastResolved = <Text>Ei tietoa itäpään tunnelista :( </Text>
+			EastResolved = <Text>Ei tietoa itäpään tunnelista  😢 </Text>
 			break;
 	}
 
 	switch(WestStatus){
 		case WestStatus = LANE_OPEN:
-			WestResolved = <Text style={styles.tunnelLabelText}>Tunneli on auki!<Image source={require('../../assets/images/tunnel_open.png')} style={styles.tunnelStyle} /></Text>
+			WestResolved = <Image source={require('../../assets/images/tunnel_open.png')} style={styles.tunnelImage	} />
 			break;
 
 		case WestStatus = LANE_CLOSED:
-			WestResolved = <Text>Kaista suljettu <Image source={require('../../assets/images/tunnel_lane_closed.png')} style={styles.tunnelStyle} /> </Text>
+			WestResolved = <Image source={require('../../assets/images/tunnel_lane_closed.png')} style={styles.tunnelImage	} />
 			break;
 
 		case WestStatus = UNKNOWN_TUNNEL_STATE:
-			WestResolved = <Text>Ei tietoa länsipään tunnelista :( </Text>
+			WestResolved = <Text>Ei tietoa länsipään tunnelista 😢 </Text>
 			break;
 	}
 
 
 	return(		
-		<View>
-			<Text style={styles.tunnelLabelText}> Itä {EastResolved}</Text>
-			<Text style={styles.tunnelLabelText}> Länsi {WestResolved} </Text>
+		<View style={styles.container}>
+			<Text style={styles.tunnelLabelText}>Itä </Text> 
+			{EastResolved}
+			<Text style={styles.tunnelLabelText}>Länsi</Text> 
+			{WestResolved} 
 		</View>
 	);
 }
 
 export default ResolveTunnelStatus;
 
-
-
-
-
-// {!tunnelState.statusValueWest ?  
-// 	<Image source={require('../../assets/images/tunnel_open.png')} style={styles.tunnelStyle} /> : 
-// 	<ActivityIndicator animating="true" size="large" color="#0000ff"/>}
-
-
-
-
 const styles = StyleSheet.create({
-  tunnelStyle: {
+	container: {
+		flex: 1,
+  },
+  tunnelImage	: {
     width: 100,
     height: 80,
     resizeMode: 'contain',
 	},
 	tunnelLabelText: {
-    fontSize: 25,
-    alignSelf: 'flex-start',
-    marginTop: 1,
+		flex: 1,
+		fontSize: 25,
+		marginLeft: 6,
   },
 });
