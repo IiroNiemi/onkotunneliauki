@@ -16,12 +16,6 @@ const ResolveTunnelStatus = (tunnelState) => {
 	// Lataa tähän SingleLaneInfot
 	let	EastResolved = null;
 	let WestResolved = null
-
-	// Tähän tarvitsee muodostaa kaksi switchiä missä käydään molemmat tunnelinpäät läpi ja palauttaa molemmista SingleLaneInfo komponentti.
-	
-	console.log(EastStatus);
-	console.log(WestStatus);
-
 	
 	switch(EastStatus){
 		case EastStatus = LANE_OPEN:
