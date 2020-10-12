@@ -16,21 +16,12 @@ export default function App(props) {
   const [initialNavigationState, setInitialNavigationState] = React.useState();
   const containerRef = React.useRef();
 	const { getInitialState } = useLinking(containerRef);
-	const [hasError, setErrors] = React.useState(false);
-	const [tunnelStatus, setTunnelStatus] = React.useState({})
 
   // Load any resources or data that we need prior to rendering the app
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
       try {
         SplashScreen.preventAutoHide();
-
-				// fetch('https://it101.infotripla.fi/city_app_traffic_data_rest_api/city_specific/tampere/tunneli/tunneli_status_and_area_notifications.php')
-				// .then((response) => {
-				// 	response.json()
-				// }).then((data) => {
-				// 	setTunnelStatus({tunnelStatus: data.tunneliStatus.statusValueEast})
-				// }).catch(error => setErrors(error))
 
         // Load our initial navigation state
         setInitialNavigationState(await getInitialState());

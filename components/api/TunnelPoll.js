@@ -31,9 +31,8 @@ const TunnelPoll = () => {
 		}
 	});
 
-	// Tämä fetch palauttaa .php kuvan.
-	// https://it101.infotripla.fi/traffic_camera/fetchPicture.php?if=1&cameraid=C04608&presetid=C0460800&preventCache=1589126551073
-
+	// Länsipään tunneli
+	// https://weathercam.digitraffic.fi/C0457200.jpg
 	// console.log(state);
 
 	return(
@@ -43,9 +42,20 @@ const TunnelPoll = () => {
 			) : (
 			<>	
 			{state ?  
-					<ResolveTunnelStatus tunnelState={state} /> : <Text>Yhteysonglema 😢</Text>}
+					<ResolveTunnelStatus tunnelState={state} /> : <Text>Yhteysongelma 😢</Text>}
 			</>
 			)}
+			<Image
+				source={{
+						uri: `https://weathercam.digitraffic.fi/C0460800.jpg`,
+				}}
+				style={{ width: 300, height: 150 }}/>
+			<br />
+			<Image
+				source={{
+						uri: `https://weathercam.digitraffic.fi/C0457200.jpg`,
+				}}
+				style={{ width: 300, height: 150 }}/>
 		</View>
 		);
 } 
